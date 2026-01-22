@@ -6,8 +6,8 @@ export default class IndexRoute extends Route {
     let result = await respone.json();
     const { data } = result;
     return data.map((rental) => {
-      const { attributes } = rental;
-      return { ...attributes };
+      const { id, attributes } = rental;
+      return { id, ...attributes };
     });
     // return result.data;
   }
