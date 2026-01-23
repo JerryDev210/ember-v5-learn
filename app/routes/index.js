@@ -1,14 +1,11 @@
 import Route from '@ember/routing/route';
+import { service } from '@ember/service';
+import { query } from '@ember-data/json-api/request';
 
 export default class IndexRoute extends Route {
+  @service store;
   async model() {
-    let respone = await fetch('http://localhost:4200/api/rentals.json');
-    let result = await respone.json();
-    const { data } = result;
-    return data.map((rental) => {
-      const { id, attributes } = rental;
-      return { id, ...attributes };
-    });
-    // return result.data;
+    const { content } = await this.store.request(query('rental'));
+    return content.data;
   }
 }
