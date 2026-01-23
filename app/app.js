@@ -6,7 +6,7 @@ import { setBuildURLConfig } from '@ember-data/request-utils';
 
 setBuildURLConfig({
   namespace: 'api',
-  host: 'http://localhost:4200',
+  // host: 'http://localhost:4200',
 });
 
 export default class App extends Application {
