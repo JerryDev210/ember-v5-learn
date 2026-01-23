@@ -42,7 +42,7 @@ module.exports = function (environment) {
 
   if (environment === 'production') {
     // here you can enable a production-specific feature
-    ENV.rootURL = '/ember-v5-learn/';
+    // ENV.rootURL = '/ember-v5-learn/'; Change to Domain Based, no need for this
   }
 
   return ENV;
